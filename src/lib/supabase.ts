@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = https://pxfpwuhkivrfmmcfhqwf.supabase.co
-const supabaseAnonKey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4ZnB3dWhraXZyZm1tY2ZocXdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE0ODg3NzIsImV4cCI6MjA1NzA2NDc3Mn0.Xra53n3AjoHIJX5RrbQ6UfzrSzkaXwzEhG7CBbvHY34
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn('Please set up your Supabase environment variables in .env file');
@@ -11,6 +11,6 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 export const supabase = createClient(
-  supabaseUrl || 'https://pxfpwuhkivrfmmcfhqwf.supabase.co',
+  supabaseUrl || 'https://placeholder.supabase.co',
   supabaseAnonKey || 'placeholder'
 );
